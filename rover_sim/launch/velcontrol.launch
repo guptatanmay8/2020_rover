@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+    <include file = "$(find rover_sim)/launch/default.launch"/>
+    <node pkg="rover_sim" type="velcontroller" name="velcontroller"/>
+
+</launch>
