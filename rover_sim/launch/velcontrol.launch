@@ -2,6 +2,8 @@
 
 <launch>
     <include file = "$(find rover_sim)/launch/default.launch"/>
+    <node pkg="rover_sim" type="reachdest" name="reachdest"/>
     <node pkg="rover_sim" type="velcontroller" name="velcontroller"/>
+
 
 </launch>

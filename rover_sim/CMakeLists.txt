@@ -5,6 +5,7 @@ find_package(catkin_simple REQUIRED)
 catkin_simple(ALL_DEPS_REQUIRED)
 
 cs_add_executable(velcontroller src/velocitycontrol.cpp)
+cs_add_executable(reachdest src/reachdest.cpp)
 
 
 cs_install()
