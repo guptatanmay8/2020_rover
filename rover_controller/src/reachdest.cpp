@@ -88,10 +88,10 @@ int main(int argc , char** argv)
         }
         else 
         {
-            if(abs(angle)<4)
+            if(abs(angle)<3)
             {
                 speed=10*dist;
-                if(abs(angle)<2)
+                if(abs(angle)<1)
                 angle2=0;
                 
                 // angle.data= 0;
@@ -103,13 +103,14 @@ int main(int argc , char** argv)
                 // angle1.data= angle;
             }
         }
+        
         ans.linear.x=speed;
         ans.angular.z=angle2;
-        angle1.data=angle2;
-        pub2.publish(angle1);
-        std_msgs::Float64 yaw1;
-        yaw1.data=yaw*180/(2*acos(0.0));
-        pub1.publish(yaw1);
+        // angle1.data=angle2;
+        // pub2.publish(angle1);
+        // std_msgs::Float64 yaw1;
+        // yaw1.data=yaw*180/(2*acos(0.0));
+        // pub1.publish(yaw1);
         pub.publish(ans);
         
 

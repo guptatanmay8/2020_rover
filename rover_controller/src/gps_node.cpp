@@ -21,7 +21,6 @@ void cb(sensor_msgs::NavSatFix msg)
     curr_lat= msg.latitude;
     curr_lon= msg.longitude;
 }
-
 void curr_pos_cb(nav_msgs::Odometry msg)
 {
     curr_pos_x= msg.pose.pose.position.x;
@@ -60,6 +59,6 @@ int main(int argc, char** argv)
     }
 
     
-
+    return 0;
 
 }
