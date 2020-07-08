@@ -18,6 +18,8 @@ int main(int argc ,char** argv)
     ros::init(argc, argv, "velcontroller");
 
     ros::NodeHandle nh;
+    double rate;
+    nh.getParam("rate",rate);
 
     ros::Subscriber sub = nh.subscribe("/rover/cmd_vel",10,velocitycb);
     ros::Publisher pub_corner_lf = nh.advertise<std_msgs::Float64>("/rover/bogie_left_corner_lf_controller/command",10);
@@ -32,7 +34,7 @@ int main(int argc ,char** argv)
     ros::Publisher pub_vel_rf    = nh.advertise<std_msgs::Float64>("/rover/corner_rf_wheel_rf_controller/command",10);
     ros::Publisher pub = nh.advertise<std_msgs::Float64>("/rover/debug",10);
     // ros::Publisher pub = nh.advertise<std_msgs::Float64>("/debug",10);
-    ros::Rate loopRate(10);
+    ros::Rate loopRate(rate);
 
     while(ros::ok)
     {

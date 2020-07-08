@@ -35,6 +35,8 @@ int main(int argc , char** argv)
 {
     ros::init(argc,argv,"reachdest");
     ros::NodeHandle nh;
+    double rate;
+    nh.getParam("rate",rate);
 
     ros::Subscriber sub_dest = nh.subscribe("/rover/cmd_pose",10,dest_cb);
     ros::Subscriber sub_curr_pos = nh.subscribe("/rover/odom",10,curr_pos_cb);
@@ -42,7 +44,7 @@ int main(int argc , char** argv)
     ros::Publisher pub1 = nh.advertise<std_msgs::Float64>("/debug/yaw",1);
     ros::Publisher pub2 = nh.advertise<std_msgs::Float64>("/debug/angle",1);
     
-    ros::Rate loopRate(10);
+    ros::Rate loopRate(rate);
     // int flag=0;
 
     while(ros::ok)

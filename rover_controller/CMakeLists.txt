@@ -1,4 +1,4 @@
-project(rover_sim)
+project(rover_controller)
 cmake_minimum_required(VERSION 2.8)
 
 find_package(catkin_simple REQUIRED)

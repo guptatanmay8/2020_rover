@@ -2,7 +2,7 @@
 <launch>
     <arg name="rover_name" default="rover"/>
     <arg name="namespace" default="$(arg rover_name)"/>
-    <arg name="model" default="$(find rover_sim)/urdf/rover_description.urdf"/>
+    <arg name="model" default="$(find rover_controller)/urdf/rover_description.urdf"/>
     <arg name="tf_prefix" default="$(optenv ROS_NAMESPACE)"/>
 
     <arg name="x" default="0" />
@@ -31,7 +31,7 @@
     respawn="false" output="screen">
    </node>
 
-   <rosparam file="$(find rover_sim)/config/rover_control.yaml" command="load" ns="$(arg namespace)"/>
+   <rosparam file="$(find rover_controller)/config/rover_control.yaml" command="load" ns="$(arg namespace)"/>
    <node name="controller_spawner" ns="$(arg namespace)" pkg="controller_manager" type="spawner" respawn="false" output="screen"  args="
         body_rocker_left_controller
         body_rocker_right_controller

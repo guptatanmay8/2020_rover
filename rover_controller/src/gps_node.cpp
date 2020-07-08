@@ -33,11 +33,14 @@ int main(int argc, char** argv)
     ros::NodeHandle nh;
     const Geodesic &geod = Geodesic::WGS84();
 
+    double rate;
+    nh.getParam("rate",rate);
+
     ros::Subscriber sub_cur_rpos_gps = nh.subscribe("/fix",10,cb);
     ros::Subscriber sub_desired_gps = nh.subscribe("/rover/desired_point_gps",10,gps_cb);
     ros::Subscriber sub_curr_pos = nh.subscribe("/rover/odom",10,curr_pos_cb);
     ros::Publisher pub_dest = nh.advertise<geometry_msgs::Pose>("/rover/cmd_pose",10);
-    ros::Rate loopRate(10);
+    ros::Rate loopRate(rate);
     while(ros::ok)
     {
     // dest_x=msg.position.x;
