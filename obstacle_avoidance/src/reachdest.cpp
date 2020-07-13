@@ -87,7 +87,7 @@ int main(int argc , char** argv)
         if(dist<0.3)
         {
             speed=0;
-            angle=0;
+            angle2=0;
         }
         else 
         {

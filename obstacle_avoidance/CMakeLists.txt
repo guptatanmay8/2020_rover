@@ -13,7 +13,7 @@ set(CMAKE_BUILD_TYPE Release)
 
 cs_add_executable(velcontroller src/velocitycontrol.cpp)
 cs_add_executable(reachdest src/reachdest.cpp)
-# cs_add_executable(avoidance_node src/avoidance_node.cpp)
+cs_add_executable(avoidance_node src/avoidance_node.cpp)
 
 
 cs_install()
