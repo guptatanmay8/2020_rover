@@ -96,6 +96,7 @@ int main(int argc , char** argv)
                 speed=10*dist;
                 if(abs(angle)<1)
                 angle2=0;
+                else angle2=angle;
                 
                 // angle.data= 0;
             }
